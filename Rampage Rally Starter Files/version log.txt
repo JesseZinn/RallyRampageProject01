@@ -1,0 +1,8 @@
+v1
+launch day starter files
+
+v2
+BLENDER FILE UPDATE
+---baked camera down even more
+---fixed file path and color management quality of life
+---closed extra tabs
