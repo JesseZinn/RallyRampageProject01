@@ -1,6 +1,6 @@
 //Maya ASCII 2024 scene
 //Name: RR_Maya_Template_v1.ma
-//Last modified: Fri, Aug 15, 2025 03:21:08 PM
+//Last modified: Fri, Aug 15, 2025 03:30:40 PM
 //Codeset: 1252
 requires maya "2024";
 requires -nodeType "type" -nodeType "shellDeformer" -nodeType "vectorAdjust" -nodeType "typeExtrude"
@@ -16,12 +16,12 @@ fileInfo "product" "Maya 2024";
 fileInfo "version" "2024";
 fileInfo "cutIdentifier" "202310181224-69282f2959";
 fileInfo "osv" "Windows 11 Home v2009 (Build: 26100)";
-fileInfo "UUID" "146FE9C8-4634-B587-FD1D-6E90741E777B";
+fileInfo "UUID" "65609AEC-4BD4-C9AD-C510-0590A69727DE";
 createNode transform -s -n "persp";
 	rename -uid "61A85CD8-4C69-D2AA-179E-D3915AC66418";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 3135.7460922535001 2808.1465306791506 2216.8816529228561 ;
-	setAttr ".r" -type "double3" -12.000000000000854 393.99999999996248 4.7955526787221515e-16 ;
+	setAttr ".t" -type "double3" 10249.77172052318 3961.9538991310465 8015.2461715758691 ;
+	setAttr ".r" -type "double3" -10.800000000001814 403.1999999998439 1.0907721408759346e-15 ;
 	setAttr ".rpt" -type "double3" -3.8813323071262505e-13 1.6940989321406387e-12 -2.5992369486291032e-12 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "3F628075-4B47-98D6-9EA1-ED98BE02B201";
@@ -29,11 +29,11 @@ createNode camera -s -n "perspShape" -p "persp";
 	setAttr ".fl" 34.999999999999979;
 	setAttr ".ncp" 2;
 	setAttr ".fcp" 35000;
-	setAttr ".coi" 7805.694053442503;
+	setAttr ".coi" 16835.884028391949;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
-	setAttr ".tp" -type "double3" -1127.1354514492527 1369.1199764829548 -4047.3070408724479 ;
+	setAttr ".tp" -type "double3" -1143.1010646104453 792.57519351643475 -4019.1822027160024 ;
 	setAttr ".hc" -type "string" "viewSet -p %camera";
 	setAttr ".dep" yes;
 createNode transform -s -n "top";
@@ -91579,7 +91579,6 @@ createNode transform -n "polySurface24" -p "LedAdvertisement01";
 createNode mesh -n "polySurfaceShape36" -p "polySurface24";
 	rename -uid "7E8AE53C-41C5-0156-8C14-92827F7CD411";
 	setAttr -k off ".v";
-	setAttr -s 2 ".iog[0].og";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
@@ -91751,12 +91750,35 @@ createNode mesh -n "LedAdvertisement02Shape" -p "transform14";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "Text_LiqorStore";
+	rename -uid "21FFB459-41CB-0C5C-9D61-BFA277C80E2F";
+	setAttr ".t" -type "double3" -1127.3412519573283 916.45802468604188 -4047.5918714621948 ;
+	setAttr ".s" -type "double3" 9.5140642890923566 9.5140642890923566 3.6022500080648419 ;
+createNode mesh -n "Text_LiqorStoreShape" -p "Text_LiqorStore";
+	rename -uid "E2FBB973-48FA-7BE3-DFF8-28920163642A";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".pv" -type "double2" 0.5000000522704795 0.48919664736604318 ;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "transform16";
+	rename -uid "74246C47-46EF-A92A-52BB-A8B422536BA9";
+	setAttr ".hio" yes;
+createNode displayPoints -n "displayPoints3" -p "transform16";
+	rename -uid "A559258C-4FCA-6088-2F56-3491A691019D";
+	setAttr -k off ".v";
+	setAttr -s 2 ".inPointPositionsPP";
+	setAttr ".hio" yes;
 parent -s -nc -r -add "|SCENE|RAMP_ReplaceMe|Cloner|Boole_0|Symmetry|Extrude|ExtrudeShape" "Extrude_instance" ;
 parent -s -nc -r -add "|SCENE|RAMP_ReplaceMe|Cloner|Boole_0|Symmetry|Extrude|ExtrudeShape" "Extrude_instance_2" ;
 createNode lightLinker -s -n "lightLinker1";
 	rename -uid "ADB30D23-444C-C5FB-7725-2D97EFDF37DB";
-	setAttr -s 15 ".lnk";
-	setAttr -s 15 ".slnk";
+	setAttr -s 17 ".lnk";
+	setAttr -s 17 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
 	rename -uid "E8DEC3FA-402A-479E-34C6-F5ACBE5704F4";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
@@ -98204,12 +98226,12 @@ createNode aiStandardSurface -n "RedLEDMat";
 	setAttr ".specular_color" -type "float3" 1 0 0 ;
 	setAttr ".specular_roughness" 0.060975611209869385;
 	setAttr ".specular_IOR" 0.84836065769195557;
-	setAttr ".emission" 4;
+	setAttr ".emission" 1.5;
 	setAttr ".emission_color" -type "float3" 1 0 0 ;
 createNode shadingEngine -n "aiStandardSurface4SG";
 	rename -uid "351D31DA-48F4-D85E-05A7-2EBDBDFC97F3";
 	setAttr ".ihi" 0;
-	setAttr -s 4 ".dsm";
+	setAttr -s 5 ".dsm";
 	setAttr ".ro" yes;
 createNode materialInfo -n "materialInfo8";
 	rename -uid "40C04696-4096-FDE7-64C6-60BAD20C8042";
@@ -99289,42 +99311,6 @@ createNode polyExtrudeFace -n "polyExtrudeFace91";
 	setAttr ".cbn" -type "double3" -959.7564697265625 703.237548828125 -6561.3448143660171 ;
 	setAttr ".cbx" -type "double3" -958.42657470703125 1441.287353515625 -5442.8174706160171 ;
 	setAttr ".raf" no;
-createNode nodeGraphEditorInfo -n "hyperShadePrimaryNodeEditorSavedTabsInfo";
-	rename -uid "EF779B99-497B-335C-D26D-2592C94586DB";
-	setAttr ".tgi[0].tn" -type "string" "Untitled_1";
-	setAttr ".tgi[0].vl" -type "double2" -44.444442678380994 -702.93941945158906 ;
-	setAttr ".tgi[0].vh" -type "double2" 633.15694133090346 366.43149631527604 ;
-	setAttr -s 10 ".tgi[0].ni";
-	setAttr ".tgi[0].ni[0].x" 51.428569793701172;
-	setAttr ".tgi[0].ni[0].y" -34.285713195800781;
-	setAttr ".tgi[0].ni[0].nvs" 1923;
-	setAttr ".tgi[0].ni[1].x" 358.57144165039062;
-	setAttr ".tgi[0].ni[1].y" -34.285713195800781;
-	setAttr ".tgi[0].ni[1].nvs" 1923;
-	setAttr ".tgi[0].ni[2].x" 80;
-	setAttr ".tgi[0].ni[2].y" -51.428569793701172;
-	setAttr ".tgi[0].ni[2].nvs" 2387;
-	setAttr ".tgi[0].ni[3].x" 428.57144165039062;
-	setAttr ".tgi[0].ni[3].y" -51.428569793701172;
-	setAttr ".tgi[0].ni[3].nvs" 1923;
-	setAttr ".tgi[0].ni[4].x" 145.71427917480469;
-	setAttr ".tgi[0].ni[4].y" 95.714286804199219;
-	setAttr ".tgi[0].ni[4].nvs" 1923;
-	setAttr ".tgi[0].ni[5].x" 167.14285278320312;
-	setAttr ".tgi[0].ni[5].y" 242.85714721679688;
-	setAttr ".tgi[0].ni[5].nvs" 1923;
-	setAttr ".tgi[0].ni[6].x" -181.42857360839844;
-	setAttr ".tgi[0].ni[6].y" 242.85714721679688;
-	setAttr ".tgi[0].ni[6].nvs" 2387;
-	setAttr ".tgi[0].ni[7].x" -181.42857360839844;
-	setAttr ".tgi[0].ni[7].y" 242.85714721679688;
-	setAttr ".tgi[0].ni[7].nvs" 2387;
-	setAttr ".tgi[0].ni[8].x" 145.71427917480469;
-	setAttr ".tgi[0].ni[8].y" 95.714286804199219;
-	setAttr ".tgi[0].ni[8].nvs" 1923;
-	setAttr ".tgi[0].ni[9].x" 167.14285278320312;
-	setAttr ".tgi[0].ni[9].y" 242.85714721679688;
-	setAttr ".tgi[0].ni[9].nvs" 1923;
 createNode polyCube -n "polyCube26";
 	rename -uid "B1812D7B-4022-28D3-AB09-B2AE4AB5F277";
 	setAttr ".cuv" 4;
@@ -99420,15 +99406,202 @@ createNode groupParts -n "groupParts28";
 createNode groupId -n "groupId127";
 	rename -uid "255290C7-402F-5AEB-BE62-9C9BC648D430";
 	setAttr ".ihi" 0;
+createNode aiStandardSurface -n "OrangeLEDMat";
+	rename -uid "D01C928E-45A4-9139-8AC3-738CB5C62F23";
+	setAttr ".base_color" -type "float3" 0.57099998 0.21114416 0.025695009 ;
+	setAttr ".specular_color" -type "float3" 0.57099998 0.21114416 0.025695009 ;
+	setAttr ".emission" 2.9101729393005371;
+	setAttr ".emission_color" -type "float3" 0.57099998 0.21114416 0.025695009 ;
+createNode shadingEngine -n "aiStandardSurface9SG";
+	rename -uid "0F49B353-4476-5A44-CAAB-559B86A709B4";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "materialInfo14";
+	rename -uid "DB933DE4-49A6-FE79-FC03-CC9887AB6457";
+createNode type -n "type2";
+	rename -uid "B23DA6A8-46D6-2F27-F80C-3EB1931A424C";
+	setAttr ".solidsPerCharacter" -type "doubleArray" 10 1 2 1 1 1 1 1 1 1 1 ;
+	setAttr ".solidsPerWord" -type "doubleArray" 2 6 5 ;
+	setAttr ".solidsPerLine" -type "doubleArray" 2 6 5 ;
+	setAttr ".vertsPerChar" -type "doubleArray" 10 121 221 346 418 558 737 926 998
+		 1138 1258 ;
+	setAttr ".characterBoundingBoxesMax" -type "vectorArray" 10 2.5656951460847277
+		 2.6156978755068954 0 4.3361682942823352 2.6092246307018105 0 6.9551026662041364 1.8222594846011999
+		 0 9.2078346941704137 1.7803483111853886 0 11.82290489926822 1.9287051794896446 0 2.6382552060417659
+		 -1.8462366958085754 0 5.2118437295793587 -1.9300920514011741 0 7.5564895343959773
+		 -2.6122298138146109 0 10.171559739493786 -2.4638729455103547 0 12.509831325788246
+		 -2.5767588764429088 0 ;
+	setAttr ".characterBoundingBoxesMin" -type "vectorArray" 10 -0.0435294609944007
+		 -0.22735721155076768 0 2.6429448989850179 -0.098354123133633814 0 4.3894075437420907
+		 -0.85467027245383509 0 6.9888560141163651 -0.20479983377053324 0 9.2604133874949071
+		 -0.18220943148086841 0 -0.0064402463790326882 -4.5215812134171331 0 2.6783827685390396
+		 -4.455461350133068 0 5.3375108543419296 -4.597377958770533 0 7.6090682277204706 -4.5747875564808682
+		 0 10.195669233783224 -4.553815481140929 0 ;
+	setAttr ".manipulatorPivots" -type "vectorArray" 10 -0.0435294609944007 -0.22735721155076768
+		 0 2.6429448989850179 -0.098354123133633814 0 4.3894075437420907 -0.85467027245383509
+		 0 6.9888560141163651 -0.20479983377053324 0 9.2604133874949071 -0.18220943148086841
+		 0 -0.0064402463790326882 -4.5215812134171331 0 2.6783827685390396 -4.455461350133068
+		 0 5.3375108543419296 -4.597377958770533 0 7.6090682277204706 -4.5747875564808682
+		 0 10.195669233783224 -4.553815481140929 0 ;
+	setAttr ".holeInfo" -type "Int32Array" 12 3 32 314 4 32
+		 386 8 32 966 10 24 1234 ;
+	setAttr ".numberOfShells" 11;
+	setAttr ".textInput" -type "string" "4C 69 71 6F 72 0A 53 74 6F 72 65";
+	setAttr ".currentFont" -type "string" "Ravie";
+	setAttr ".currentStyle" -type "string" "Regular";
+	setAttr ".manipulatorPositionsPP" -type "vectorArray" 32 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 ;
+	setAttr ".manipulatorWordPositionsPP" -type "vectorArray" 2 0 0 0 0 0 0 ;
+	setAttr ".manipulatorLinePositionsPP" -type "vectorArray" 2 0 0 0 0 0 0 ;
+	setAttr ".manipulatorRotationsPP" -type "vectorArray" 32 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 ;
+	setAttr ".manipulatorWordRotationsPP" -type "vectorArray" 2 0 0 0 0 0 0 ;
+	setAttr ".manipulatorLineRotationsPP" -type "vectorArray" 2 0 0 0 0 0 0 ;
+	setAttr ".manipulatorScalesPP" -type "vectorArray" 32 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 ;
+	setAttr ".manipulatorWordScalesPP" -type "vectorArray" 2 0 0 0 0 0 0 ;
+	setAttr ".manipulatorLineScalesPP" -type "vectorArray" 2 0 0 0 0 0 0 ;
+	setAttr ".alignmentAdjustments" -type "doubleArray" 2 5.9332171801313107 6.2581357860836393 ;
+	setAttr ".manipulatorMode" 0;
+	setAttr ".fontSize" 4.392578125;
+	setAttr ".alignmentMode" 2;
+createNode typeExtrude -n "typeExtrude2";
+	rename -uid "134DCCFA-473D-029C-9227-F7AD69B0A3CD";
+	addAttr -s false -ci true -h true -sn "typeMessage" -ln "typeMessage" -at "message";
+	setAttr ".exdv" 1;
+	setAttr -s 4 ".exc[0:3]"  0 0.5 0.333 0.5 0.66600001 0.5 1 0.5;
+	setAttr -s 4 ".fbc[0:3]"  0 1 0.5 1 1 0.5 1 0;
+	setAttr -s 4 ".bbc[0:3]"  0 1 0.5 1 1 0.5 1 0;
+	setAttr ".capComponents" -type "componentList" 12 "f[0]" "f[122:123]" "f[196:197]" "f[226:227]" "f[353:354]" "f[427:428]" "f[569:570]" "f[750:751]" "f[941:942]" "f[1015:1016]" "f[1157:1158]" "f[1279]";
+	setAttr ".bevelComponents" -type "componentList" 0;
+	setAttr ".extrusionComponents" -type "componentList" 11 "f[1:121]" "f[124:195]" "f[198:225]" "f[228:352]" "f[355:426]" "f[429:568]" "f[571:749]" "f[752:940]" "f[943:1014]" "f[1017:1156]" "f[1159:1278]";
+	setAttr -s 10 ".charGroupId";
+createNode groupId -n "groupid4";
+	rename -uid "874FB6C8-4344-BE85-4C4D-B7B22372583C";
+createNode groupId -n "groupid5";
+	rename -uid "BFA67D24-4AAD-2876-0518-578906BDD33E";
+createNode groupId -n "groupid6";
+	rename -uid "E81301A8-4686-703C-4A30-929511EEE134";
+createNode standardSurface -n "typeStandardSurface2";
+	rename -uid "4E8FC822-445B-D8F5-052C-78AB092F36B9";
+	setAttr ".bc" -type "float3" 1 1 1 ;
+createNode shadingEngine -n "typeStandardSurface2SG";
+	rename -uid "4D6B57D1-4DE8-D991-426F-26B29AC5C219";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "materialInfo15";
+	rename -uid "C1F55CCB-40B3-ED25-9A6F-E5841FE224D8";
+createNode vectorAdjust -n "vectorAdjust2";
+	rename -uid "E6A5A8A2-4116-8E2D-8192-848A4EF21D0B";
+	setAttr ".extrudeDistanceScalePP" -type "doubleArray" 0 ;
+	setAttr ".boundingBoxes" -type "vectorArray" 20 -0.043529462069272995 -0.22735720872879028
+		 0 -0.04352946206666377 -0.22735720872594722 2.4999999999999998e-12 2.6429448127746582
+		 -0.098354123532772064 0 2.6429448127763515 -0.09835412353006448 2.4999999999999998e-12 4.3894076347351074
+		 -0.85467028617858887 0 4.3894076347376734 -0.8546702861759119 2.4999999999999998e-12 6.9888558387756348
+		 -0.2047998309135437 0 6.9888558387778534 -0.20479983091155857 2.4999999999999998e-12 9.2604131698608398
+		 -0.18220943212509155 0 9.2604131698634031 -0.18220943212298063 2.4999999999999998e-12 -0.0064402464777231216
+		 -4.5215811729431152 0 -0.0064402464750784264 -4.52158117294044 2.4999999999999998e-12 2.6783828735351562
+		 -4.4554615020751953 0 2.6783828735376898 -4.4554615020726702 2.4999999999999998e-12 5.3375110626220703
+		 -4.5973777770996094 0 5.337511062624289 -4.5973777770976243 2.4999999999999998e-12 7.6090683937072754
+		 -4.5747876167297363 0 7.6090683937098378 -4.5747876167276251 2.4999999999999998e-12 10.195669174194336
+		 -4.5538153648376465 0 10.195669174196651 -4.5538153648356694 2.4999999999999998e-12 ;
+createNode polySoftEdge -n "polySoftEdge8";
+	rename -uid "BD3A46DE-4A3E-3360-5386-79BF4A6B1658";
+	setAttr ".uopa" yes;
+	setAttr ".ics" -type "componentList" 1 "e[*]";
+	setAttr ".ix" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
+createNode polyRemesh -n "polyRemesh2";
+	rename -uid "6B2C14F3-4023-2F32-7F5A-F4A7E5D9E040";
+	addAttr -s false -ci true -h true -sn "typeMessage" -ln "typeMessage" -at "message";
+	setAttr ".nds" 1;
+	setAttr ".ix" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
+	setAttr ".tsb" no;
+	setAttr ".ipt" 0;
+createNode polyAutoProj -n "polyAutoProj2";
+	rename -uid "ED838D08-4F18-0458-7BA6-149BA229553B";
+	setAttr ".uopa" yes;
+	setAttr ".ics" -type "componentList" 1 "f[*]";
+	setAttr ".ix" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
+	setAttr ".ps" 0.20000000298023224;
+	setAttr ".dl" yes;
+createNode shellDeformer -n "shellDeformer2";
+	rename -uid "4871E28F-4A72-019F-F93C-089823E7D928";
+	addAttr -s false -ci true -h true -sn "typeMessage" -ln "typeMessage" -at "message";
 createNode groupId -n "groupId128";
-	rename -uid "FE671BED-41D6-57AC-5AB2-8E8C3AD1521D";
-	setAttr ".ihi" 0;
-createNode groupParts -n "groupParts29";
-	rename -uid "0F7A0E30-4CFF-6A86-A63F-97BEBFE764D0";
-	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 1 "f[0]";
+	rename -uid "CE9DF8E2-4BDE-BCF7-E4EF-F5A050A0FE3A";
+createNode groupId -n "groupId129";
+	rename -uid "65CA796F-442E-787A-C5C9-739C51210173";
+createNode groupId -n "groupId130";
+	rename -uid "80D6F5CA-4AB4-0784-E56D-81A2CF32190A";
+createNode groupId -n "groupId131";
+	rename -uid "2174E98C-45D7-BE1A-81A7-E4BF9807062C";
+createNode groupId -n "groupId132";
+	rename -uid "8CB7AAC6-4EE1-1755-4EFB-27A9587F6498";
+createNode groupId -n "groupId133";
+	rename -uid "7CF1235C-46E0-569C-FE05-91A73BC8F4BA";
+createNode groupId -n "groupId134";
+	rename -uid "5FD86F10-42E3-269B-9D2B-DEA05F770BFE";
+createNode groupId -n "groupId135";
+	rename -uid "80DD750E-45C9-74D8-E1A2-FB85153D8D9D";
+createNode groupId -n "groupId136";
+	rename -uid "DA50B17D-4270-EEF5-3C65-778CED12D92C";
+createNode groupId -n "groupId137";
+	rename -uid "1B0B7EB2-4D99-DE0A-A0CA-5BBAEF32BDDC";
+createNode nodeGraphEditorInfo -n "hyperShadePrimaryNodeEditorSavedTabsInfo";
+	rename -uid "217245BF-419E-EFFF-387F-E99B136FF5A0";
+	setAttr ".tgi[0].tn" -type "string" "Untitled_1";
+	setAttr ".tgi[0].vl" -type "double2" -109.78835542576228 -1513.2274530972568 ;
+	setAttr ".tgi[0].vh" -type "double2" 1594.1798308328794 1175.9258791988298 ;
+	setAttr -s 14 ".tgi[0].ni";
+	setAttr ".tgi[0].ni[0].x" 358.57144165039062;
+	setAttr ".tgi[0].ni[0].y" -34.285713195800781;
+	setAttr ".tgi[0].ni[0].nvs" 1923;
+	setAttr ".tgi[0].ni[1].x" 428.57144165039062;
+	setAttr ".tgi[0].ni[1].y" -51.428569793701172;
+	setAttr ".tgi[0].ni[1].nvs" 1923;
+	setAttr ".tgi[0].ni[2].x" 145.71427917480469;
+	setAttr ".tgi[0].ni[2].y" 95.714286804199219;
+	setAttr ".tgi[0].ni[2].nvs" 1923;
+	setAttr ".tgi[0].ni[3].x" 51.428569793701172;
+	setAttr ".tgi[0].ni[3].y" -34.285713195800781;
+	setAttr ".tgi[0].ni[3].nvs" 1923;
+	setAttr ".tgi[0].ni[4].x" 80;
+	setAttr ".tgi[0].ni[4].y" -51.428569793701172;
+	setAttr ".tgi[0].ni[4].nvs" 2387;
+	setAttr ".tgi[0].ni[5].x" -181.42857360839844;
+	setAttr ".tgi[0].ni[5].y" 242.85714721679688;
+	setAttr ".tgi[0].ni[5].nvs" 2387;
+	setAttr ".tgi[0].ni[6].x" 167.14285278320312;
+	setAttr ".tgi[0].ni[6].y" 242.85714721679688;
+	setAttr ".tgi[0].ni[6].nvs" 1923;
+	setAttr ".tgi[0].ni[7].x" -181.42857360839844;
+	setAttr ".tgi[0].ni[7].y" 242.85714721679688;
+	setAttr ".tgi[0].ni[7].nvs" 2387;
+	setAttr ".tgi[0].ni[8].x" 145.71427917480469;
+	setAttr ".tgi[0].ni[8].y" 95.714286804199219;
+	setAttr ".tgi[0].ni[8].nvs" 1923;
+	setAttr ".tgi[0].ni[9].x" 167.14285278320312;
+	setAttr ".tgi[0].ni[9].y" 242.85714721679688;
+	setAttr ".tgi[0].ni[9].nvs" 1923;
+	setAttr ".tgi[0].ni[10].x" 1205.7142333984375;
+	setAttr ".tgi[0].ni[10].y" 142.85714721679688;
+	setAttr ".tgi[0].ni[10].nvs" 1923;
+	setAttr ".tgi[0].ni[11].x" 857.14288330078125;
+	setAttr ".tgi[0].ni[11].y" 142.85714721679688;
+	setAttr ".tgi[0].ni[11].nvs" 2387;
+	setAttr ".tgi[0].ni[12].x" 491.42855834960938;
+	setAttr ".tgi[0].ni[12].y" 1041.4285888671875;
+	setAttr ".tgi[0].ni[12].nvs" 2387;
+	setAttr ".tgi[0].ni[13].x" 840;
+	setAttr ".tgi[0].ni[13].y" 1041.4285888671875;
+	setAttr ".tgi[0].ni[13].nvs" 1923;
 createNode mayaUsdLayerManager -n "mayaUsdLayerManager1";
-	rename -uid "99DAF353-4CFC-9FD6-AF4E-72A8271C1EDD";
+	rename -uid "108D7661-49B3-84C6-614C-DB8FF4E9722A";
 	setAttr ".sst" -type "string" "";
 select -ne :time1;
 	setAttr ".o" 0;
@@ -99440,10 +99613,10 @@ select -ne :hardwareRenderingGlobals;
 	setAttr ".fprt" yes;
 	setAttr ".rtfm" 1;
 select -ne :renderPartition;
-	setAttr -s 15 ".st";
+	setAttr -s 17 ".st";
 select -ne :renderGlobalsList1;
 select -ne :defaultShaderList1;
-	setAttr -s 15 ".s";
+	setAttr -s 17 ".s";
 select -ne :postProcessList1;
 	setAttr -s 2 ".p";
 select -ne :defaultRenderingList1;
@@ -99453,9 +99626,9 @@ select -ne :standardSurface1;
 	setAttr ".bc" -type "float3" 0.40000001 0.40000001 0.40000001 ;
 	setAttr ".sr" 0.5;
 select -ne :initialShadingGroup;
-	setAttr -s 279 ".dsm";
+	setAttr -s 278 ".dsm";
 	setAttr ".ro" yes;
-	setAttr -s 93 ".gn";
+	setAttr -s 92 ".gn";
 select -ne :initialParticleSE;
 	setAttr ".ro" yes;
 select -ne :defaultRenderGlobals;
@@ -100139,9 +100312,7 @@ connectAttr "groupId78.id" "BigAdvertisementShape1.iog.og[0].gid";
 connectAttr ":initialShadingGroup.mwc" "BigAdvertisementShape1.iog.og[0].gco";
 connectAttr "groupParts20.og" "BigAdvertisementShape1.i";
 connectAttr "groupId79.id" "BigAdvertisementShape1.ciog.cog[0].cgid";
-connectAttr "groupParts29.og" "polySurfaceShape36.i";
-connectAttr "groupId128.id" "polySurfaceShape36.iog.og[0].gid";
-connectAttr ":initialShadingGroup.mwc" "polySurfaceShape36.iog.og[0].gco";
+connectAttr "polySeparate12.out[0]" "polySurfaceShape36.i";
 connectAttr "polySeparate12.out[1]" "polySurfaceShape37.i";
 connectAttr "groupId126.id" "LedAdvertisement01Shape.iog.og[0].gid";
 connectAttr ":initialShadingGroup.mwc" "LedAdvertisement01Shape.iog.og[0].gco";
@@ -100153,6 +100324,11 @@ connectAttr "groupId122.id" "LedAdvertisement02Shape.iog.og[0].gid";
 connectAttr ":initialShadingGroup.mwc" "LedAdvertisement02Shape.iog.og[0].gco";
 connectAttr "groupParts25.og" "LedAdvertisement02Shape.i";
 connectAttr "groupId123.id" "LedAdvertisement02Shape.ciog.cog[0].cgid";
+connectAttr "shellDeformer2.og[0]" "Text_LiqorStoreShape.i";
+connectAttr "shellDeformer2.rotationPivotPointsPP" "displayPoints3.inPointPositionsPP[0]"
+		;
+connectAttr "shellDeformer2.scalePivotPointsPP" "displayPoints3.inPointPositionsPP[1]"
+		;
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" "typeStandardSurfaceSG.message" ":defaultLightSet.message";
@@ -100168,6 +100344,8 @@ relationship "link" ":lightLinker1" "aiStandardSurface6SG.message" ":defaultLigh
 relationship "link" ":lightLinker1" "aiStandardSurface7SG.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" "aiStandardSurface8SG.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" "lambert2SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "aiStandardSurface9SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "typeStandardSurface2SG.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" "typeStandardSurfaceSG.message" ":defaultLightSet.message";
@@ -100183,6 +100361,8 @@ relationship "shadowLink" ":lightLinker1" "aiStandardSurface6SG.message" ":defau
 relationship "shadowLink" ":lightLinker1" "aiStandardSurface7SG.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" "aiStandardSurface8SG.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" "lambert2SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "aiStandardSurface9SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "typeStandardSurface2SG.message" ":defaultLightSet.message";
 connectAttr "layerManager.dli[0]" "defaultLayer.id";
 connectAttr "renderLayerManager.rlmi[0]" "defaultRenderLayer.rlid";
 connectAttr "groupId1.msg" "Extrude_S_0_SelectionSet.gn" -na;
@@ -100667,6 +100847,7 @@ connectAttr "|OpenSign1|Text_Open|Text_OpenShape.iog" "aiStandardSurface4SG.dsm"
 		 -na;
 connectAttr "polySurfaceShape27.iog" "aiStandardSurface4SG.dsm" -na;
 connectAttr "polySurfaceShape34.iog" "aiStandardSurface4SG.dsm" -na;
+connectAttr "polySurfaceShape36.iog" "aiStandardSurface4SG.dsm" -na;
 connectAttr "aiStandardSurface4SG.msg" "materialInfo8.sg";
 connectAttr "RedLEDMat.msg" "materialInfo8.m";
 connectAttr "RedLEDMat.msg" "materialInfo8.t" -na;
@@ -100865,26 +101046,6 @@ connectAttr "Future_BuildingShape2.wm" "polyBevel16.mp";
 connectAttr "polyExtrudeFace90.out" "polyTweak113.ip";
 connectAttr "polyBevel16.out" "polyExtrudeFace91.ip";
 connectAttr "Future_BuildingShape2.wm" "polyExtrudeFace91.mp";
-connectAttr "BlackMat.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[0].dn"
-		;
-connectAttr "lambert2SG.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[1].dn"
-		;
-connectAttr "WhiteLEDMat.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[2].dn"
-		;
-connectAttr "aiStandardSurface8SG.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[3].dn"
-		;
-connectAttr "blinn1SG.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[4].dn"
-		;
-connectAttr "aiStandardSurface2SG.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[5].dn"
-		;
-connectAttr "MartiniLEDLight.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[6].dn"
-		;
-connectAttr "GlossyRoadMat.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[7].dn"
-		;
-connectAttr "phongE1SG.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[8].dn"
-		;
-connectAttr "aiStandardSurface1SG.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[9].dn"
-		;
 connectAttr "polyCube26.out" "polyExtrudeFace92.ip";
 connectAttr "LedAdvertisement01Shape.wm" "polyExtrudeFace92.mp";
 connectAttr "polyTweak114.out" "polyExtrudeFace93.ip";
@@ -100901,8 +101062,79 @@ connectAttr "polyExtrudeFace93.out" "polyTweak115.ip";
 connectAttr "LedAdvertisement01Shape.o" "polySeparate12.ip";
 connectAttr "polyChipOff12.out" "groupParts28.ig";
 connectAttr "groupId126.id" "groupParts28.gi";
-connectAttr "polySeparate12.out[0]" "groupParts29.ig";
-connectAttr "groupId128.id" "groupParts29.gi";
+connectAttr "OrangeLEDMat.out" "aiStandardSurface9SG.ss";
+connectAttr "Text_LiqorStoreShape.iog" "aiStandardSurface9SG.dsm" -na;
+connectAttr "aiStandardSurface9SG.msg" "materialInfo14.sg";
+connectAttr "OrangeLEDMat.msg" "materialInfo14.m";
+connectAttr "OrangeLEDMat.msg" "materialInfo14.t" -na;
+connectAttr "Text_LiqorStore.msg" "type2.transformMessage";
+connectAttr "type2.vertsPerChar" "typeExtrude2.vertsPerChar";
+connectAttr "groupid4.id" "typeExtrude2.cid";
+connectAttr "groupid5.id" "typeExtrude2.bid";
+connectAttr "groupid6.id" "typeExtrude2.eid";
+connectAttr "type2.outputMesh" "typeExtrude2.in";
+connectAttr "type2.extrudeMessage" "typeExtrude2.typeMessage";
+connectAttr "groupId128.id" "typeExtrude2.charGroupId" -na;
+connectAttr "groupId129.id" "typeExtrude2.charGroupId" -na;
+connectAttr "groupId130.id" "typeExtrude2.charGroupId" -na;
+connectAttr "groupId131.id" "typeExtrude2.charGroupId" -na;
+connectAttr "groupId132.id" "typeExtrude2.charGroupId" -na;
+connectAttr "groupId133.id" "typeExtrude2.charGroupId" -na;
+connectAttr "groupId134.id" "typeExtrude2.charGroupId" -na;
+connectAttr "groupId135.id" "typeExtrude2.charGroupId" -na;
+connectAttr "groupId136.id" "typeExtrude2.charGroupId" -na;
+connectAttr "groupId137.id" "typeExtrude2.charGroupId" -na;
+connectAttr "typeStandardSurface2.oc" "typeStandardSurface2SG.ss";
+connectAttr "typeStandardSurface2SG.msg" "materialInfo15.sg";
+connectAttr "typeStandardSurface2.msg" "materialInfo15.m";
+connectAttr "typeExtrude2.out" "vectorAdjust2.ip[0].ig";
+connectAttr "type2.grouping" "vectorAdjust2.grouping";
+connectAttr "type2.manipulatorTransforms" "vectorAdjust2.manipulatorTransforms";
+connectAttr "type2.alignmentMode" "vectorAdjust2.alignmentMode";
+connectAttr "type2.vertsPerChar" "vectorAdjust2.vertsPerChar";
+connectAttr "typeExtrude2.vertexGroupIds" "vectorAdjust2.vertexGroupIds";
+connectAttr "vectorAdjust2.og[0]" "polySoftEdge8.ip";
+connectAttr "Text_LiqorStoreShape.wm" "polySoftEdge8.mp";
+connectAttr "polySoftEdge8.out" "polyRemesh2.ip";
+connectAttr "Text_LiqorStoreShape.wm" "polyRemesh2.mp";
+connectAttr "type2.remeshMessage" "polyRemesh2.typeMessage";
+connectAttr "typeExtrude2.capComponents" "polyRemesh2.ics";
+connectAttr "polyRemesh2.out" "polyAutoProj2.ip";
+connectAttr "Text_LiqorStoreShape.wm" "polyAutoProj2.mp";
+connectAttr "polyAutoProj2.out" "shellDeformer2.ip[0].ig";
+connectAttr "type2.vertsPerChar" "shellDeformer2.vertsPerChar";
+connectAttr ":time1.o" "shellDeformer2.ti";
+connectAttr "type2.grouping" "shellDeformer2.grouping";
+connectAttr "type2.animationMessage" "shellDeformer2.typeMessage";
+connectAttr "typeExtrude2.vertexGroupIds" "shellDeformer2.vertexGroupIds";
+connectAttr "lambert2SG.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[0].dn"
+		;
+connectAttr "aiStandardSurface8SG.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[1].dn"
+		;
+connectAttr "phongE1SG.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[2].dn"
+		;
+connectAttr "BlackMat.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[3].dn"
+		;
+connectAttr "WhiteLEDMat.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[4].dn"
+		;
+connectAttr "MartiniLEDLight.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[5].dn"
+		;
+connectAttr "aiStandardSurface2SG.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[6].dn"
+		;
+connectAttr "GlossyRoadMat.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[7].dn"
+		;
+connectAttr "blinn1SG.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[8].dn"
+		;
+connectAttr "aiStandardSurface1SG.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[9].dn"
+		;
+connectAttr "aiStandardSurface9SG.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[10].dn"
+		;
+connectAttr "OrangeLEDMat.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[11].dn"
+		;
+connectAttr "typeStandardSurface2.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[12].dn"
+		;
+connectAttr "typeStandardSurface2SG.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[13].dn"
+		;
 connectAttr "typeStandardSurfaceSG.pa" ":renderPartition.st" -na;
 connectAttr "phongE1SG.pa" ":renderPartition.st" -na;
 connectAttr "aiStandardSurface1SG.pa" ":renderPartition.st" -na;
@@ -100916,6 +101148,8 @@ connectAttr "aiStandardSurface6SG.pa" ":renderPartition.st" -na;
 connectAttr "aiStandardSurface7SG.pa" ":renderPartition.st" -na;
 connectAttr "aiStandardSurface8SG.pa" ":renderPartition.st" -na;
 connectAttr "lambert2SG.pa" ":renderPartition.st" -na;
+connectAttr "aiStandardSurface9SG.pa" ":renderPartition.st" -na;
+connectAttr "typeStandardSurface2SG.pa" ":renderPartition.st" -na;
 connectAttr "typeStandardSurface.msg" ":defaultShaderList1.s" -na;
 connectAttr "MartiniLEDLight.msg" ":defaultShaderList1.s" -na;
 connectAttr "GlossyRoadMat.msg" ":defaultShaderList1.s" -na;
@@ -100926,6 +101160,8 @@ connectAttr "BlueLEDMat.msg" ":defaultShaderList1.s" -na;
 connectAttr "MainBuildingWindowMat.msg" ":defaultShaderList1.s" -na;
 connectAttr "WhiteLEDMat.msg" ":defaultShaderList1.s" -na;
 connectAttr "BlackMat.msg" ":defaultShaderList1.s" -na;
+connectAttr "OrangeLEDMat.msg" ":defaultShaderList1.s" -na;
+connectAttr "typeStandardSurface2.msg" ":defaultShaderList1.s" -na;
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
 connectAttr "aiSkyDomeLightShape1.ltd" ":lightList1.l" -na;
 connectAttr "|MainBuildingPillarLights|PillarLight02|BuildingPillarLight01|BuildingPillarLight1.ltd" ":lightList1.l"
@@ -101341,7 +101577,6 @@ connectAttr "LedAdvertisement02Shape.ciog.cog[0]" ":initialShadingGroup.dsm" -na
 connectAttr "LedAdvertisement01Shape.iog.og[0]" ":initialShadingGroup.dsm" -na;
 connectAttr "LedAdvertisement01Shape.ciog.cog[0]" ":initialShadingGroup.dsm" -na
 		;
-connectAttr "polySurfaceShape36.iog.og[0]" ":initialShadingGroup.dsm" -na;
 connectAttr "Truck_Obj:groupId68.msg" ":initialShadingGroup.gn" -na;
 connectAttr "Truck_Obj:groupId69.msg" ":initialShadingGroup.gn" -na;
 connectAttr "Truck_Obj:groupId70.msg" ":initialShadingGroup.gn" -na;
@@ -101434,7 +101669,6 @@ connectAttr "groupId122.msg" ":initialShadingGroup.gn" -na;
 connectAttr "groupId123.msg" ":initialShadingGroup.gn" -na;
 connectAttr "groupId126.msg" ":initialShadingGroup.gn" -na;
 connectAttr "groupId127.msg" ":initialShadingGroup.gn" -na;
-connectAttr "groupId128.msg" ":initialShadingGroup.gn" -na;
 connectAttr "aiSkyDomeLight1.iog" ":defaultLightSet.dsm" -na;
 connectAttr "|MainBuildingPillarLights|PillarLight02|BuildingPillarLight01.iog" ":defaultLightSet.dsm"
 		 -na;
